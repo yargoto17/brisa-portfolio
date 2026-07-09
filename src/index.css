@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "PP Mondwest";
+  src: url("/fonts/PPMondwest-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --color-cream: #f9faf4;
+  --color-cream-nav: #f9f4e3;
+  --color-blue: #5771be;
+  --color-purple: #7b45e0;
+  --color-ink: #000000;
+
+  --color-swatch-pink: #ffe2e2;
+  --color-swatch-peach: #ffe8cd;
+  --color-swatch-mint: #e0f6da;
+  --color-swatch-periwinkle: #d6e0f6;
+  --color-swatch-lavender: #e1d4f7;
+
+  --font-display: "PP Mondwest", "Georgia", serif;
+  --font-body: "PP Neue Montreal", "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body {
+  background-color: var(--color-cream);
+  font-family: var(--font-body);
+  color: var(--color-ink);
+}
