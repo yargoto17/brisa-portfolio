@@ -1,0 +1,34 @@
+<!doctype html>
+<!--
+  GitHub Pages is a static host: it has no idea that "/work" or "/about"
+  are valid client-side routes, so a hard refresh (or a shared link) on
+  those paths returns this 404.html instead of your app.
+
+  This is the standard SPA-on-GitHub-Pages workaround (the same technique
+  used by spa-github-pages): encode the requested path into a query string
+  and redirect to the real index.html, where a matching script in
+  index.html decodes it and hands the route back to React Router via
+  history.replaceState — so the user never sees a flash of a 404 page or
+  loses their intended URL.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Brisa Goto — UI/UX Designer & Illustrator</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      var pathSegmentsToKeep = 1; // keep "/brisa-portfolio" as the app root
+
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+        l.pathname.split("/").slice(0, 1 + pathSegmentsToKeep).join("/") + "/?/" +
+        l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+        (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
