@@ -115,7 +115,7 @@ const REVISIONS = [
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="mb-2 font-display text-[28px] text-blue lg:text-[32px]">
+    <p className="mb-2 font-display text-[20px] md:text-[28px] lg:text-[32px]  text-blue ">
       {children}
     </p>
   );
@@ -123,7 +123,7 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="-mt-2 max-w-237.5 font-display text-[36px] leading-none text-black lg:text-[48px]">
+    <h2 className="-mt-2 max-w-237.5 font-display text-[24px] md:text-[36px] lg:text-[48px] leading-none text-black">
       {children}
     </h2>
   );
@@ -145,33 +145,33 @@ function Section({
   imageRight?: React.ReactNode;
 }) {
   return (
-    <section className={`py-16 px-28 ${className}`}>
+    <section className={`py-8 md:py-16 px-4 md:px-28 ${className}`}>
       {stacked ? (
         <div>
           <SectionEyebrow>{eyebrow}</SectionEyebrow>
           {heading && <SectionHeading>{heading}</SectionHeading>}
-          <div className="mt-4 space-y-5 font-body text-[18px] leading-[1.3] text-black lg:text-[20px]">
+          <div className="mt-4 space-y-5 font-body text-[16px] md:text[18px] leading-[1.3] text-black lg:text-[20px]">
             {children}
           </div>
         </div>
       ) : imageRight ? (
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <div>
             <SectionEyebrow>{eyebrow}</SectionEyebrow>
             {heading && <SectionHeading>{heading}</SectionHeading>}
-            <div className="mt-8 space-y-5 font-body text-[18px] leading-[1.3] text-black lg:text-[20px]">
+            <div className="mt-8 space-y-5 font-body text-[16px] md:text-[18px] leading-[1.3] text-black lg:text-[20px]">
               {children}
             </div>
           </div>
           <div className="flex items-center justify-center">{imageRight}</div>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <div className="self-start">
             <SectionEyebrow>{eyebrow}</SectionEyebrow>
             {heading && <SectionHeading>{heading}</SectionHeading>}
           </div>
-          <div className="self-start space-y-5 font-body text-[18px] leading-[1.3] text-black lg:text-[20px]">
+          <div className="self-start space-y-5 font-body text-[16px] md:text-[18px] leading-[1.3] text-black lg:text-[20px]">
             {children}
           </div>
         </div>
@@ -185,29 +185,29 @@ function Section({
 export default function WorkPage() {
   return (
     <PageLayout>
-      <div className="relative px-8 py-40.5 pb-10 md:px-28">
+      <div className="relative px-4 md:px-8 py-12 md:py-40 pb-10">
         {/* Title */}
-        <div className="fade-in grid grid-cols-1 items-center gap-16 md:grid-cols-2">
+        <div className="fade-in grid grid-cols-1 items-center gap-8 md:gap-16 md:grid-cols-2">
           <img
             src={lustriaMockup}
             alt="Lustria platform shown on a laptop screen"
             className="w-full rounded-[20px] object-cover"
           />
           <div>
-            <h1 className="font-display text-[64px] leading-none text-black lg:text-[96px]">
+            <h1 className="font-display text-[48px] md:text-[64px] lg:text-[96px] leading-none text-black">
               Lustria
             </h1>
-            <p className="font-body text-[20px] lg:text-[24px]">
+            <p className="font-body text-[18px] md:text-[20px] lg:text-[24px]">
               Score the best savings in beauty
             </p>
 
-            <dl className="mt-10 grid grid-cols-3 gap-6">
+            <dl className="mt-6 md:mt-10 grid grid-cols-3 gap-3 md:gap-6">
               {QUICK_FACTS.map((fact) => (
                 <div key={fact.label}>
-                  <dt className="font-display text-[24px] text-black lg:text-[32px]">
+                  <dt className="font-display text-[16px] md:text-[24px] lg:text-[32px] text-black">
                     {fact.label}
                   </dt>
-                  <dd className="pl-0.5 mt-2 space-y-1 font-body text-[16px] text-black lg:text-[20px]">
+                  <dd className="pl-0.5 mt-2 space-y-1 font-body text-[12px] md:text-[16px] lg:text-[20px] text-black">
                     {fact.items.map((item) => (
                       <p key={item}>{item}</p>
                     ))}
@@ -217,17 +217,19 @@ export default function WorkPage() {
             </dl>
           </div>
         </div>
+
         <img
           src={macbookTriad}
           alt=""
-          className="fade-in mt-26.5 w-full rounded-[20px] object-cover"
+          className="fade-in mt-12 md:mt-26 w-full rounded-[20px] object-cover"
         />
+
         {/* Overview */}
         <Section
           eyebrow="What is Lustria?"
           heading="Overview"
           stacked
-          className="fade-in pt-28"
+          className="fade-in pt-12 md:pt-28"
         >
           <p>
             Everyone should have access to high-quality products within their
@@ -242,7 +244,7 @@ export default function WorkPage() {
           </p>
         </Section>
 
-        <hr className="fade-in border-t border-black mx-28" />
+        <hr className="fade-in border-t border-black mx-4 md:mx-28" />
 
         {/* The Problem */}
         <Section
@@ -279,24 +281,24 @@ export default function WorkPage() {
           className="fade-in"
           stacked
         >
-          <ol className="fade-in mt-28 grid grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] items-center gap-x-4">
+          <ol className="fade-in mt-8 md:mt-28 grid grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr_auto_1fr] items-center gap-x-1 md:gap-x-4">
             {PROCESS_STEPS.map((step, i) => (
               <>
                 <li key={step.number} className="col-span-1 text-center">
                   <div
-                    className="mx-auto flex aspect-square w-full items-center justify-center rounded-sm border-2 border-black font-display text-[40px]"
+                    className="mx-auto flex aspect-square w-full items-center justify-center rounded-sm border-2 border-black font-display text-[20px] md:text-[40px]"
                     style={{ backgroundColor: step.color }}
                   >
                     {step.number}
                   </div>
-                  <p className="mt-3 font-body text-[18px] lg:text-[20px]">
+                  <p className="mt-2 font-body text-[10px] md:text-[18px] lg:text-[20px]">
                     {step.label}
                   </p>
                 </li>
                 {i < PROCESS_STEPS.length - 1 && (
                   <span
                     key={`arrow-${i}`}
-                    className="col-span-1 text-center text-[24px] pb-6"
+                    className="col-span-1 text-center text-[14px] md:text-[24px] pb-4 md:pb-6"
                   >
                     →
                   </span>
@@ -309,21 +311,21 @@ export default function WorkPage() {
         {/* Research */}
         <Section
           eyebrow="Research"
-          heading="Beauty fans felt they had an abundance of options online, but a shortage of “good” ones"
+          heading="Beauty fans felt they had an abundance of options online, but a shortage of “good“ ones"
           className="fade-in"
           imageRight={
-            <div className="fade-in w-full flex flex-col gap-6">
+            <div className="fade-in w-full flex flex-col gap-4 md:gap-6">
               {RESEARCH_FINDINGS.map((finding, i) => {
                 const alignments = ["self-start", "self-end", "self-start"];
                 return (
                   <figure
                     key={finding.name}
-                    className={`w-58.75 aspect-square rounded-sm border-2 border-black bg-swatch-periwinkle p-5 flex flex-col justify-between ${alignments[i]}`}
+                    className={`w-full md:w-58.75 aspect-square rounded-sm border-2 border-black bg-swatch-periwinkle p-4 md:p-5 flex flex-col justify-between ${alignments[i]}`}
                   >
-                    <blockquote className="font-body text-[16px] leading-[1.3]">
+                    <blockquote className="font-body text-[14px] md:text-[16px] leading-[1.3]">
                       "{finding.quote}"
                     </blockquote>
-                    <figcaption className="font-body text-[16px] text-right">
+                    <figcaption className="font-body text-[14px] md:text-[16px] text-right">
                       {finding.name}
                     </figcaption>
                   </figure>
@@ -350,28 +352,30 @@ export default function WorkPage() {
         {/* Findings */}
         <Section
           eyebrow="Findings"
-          heading="Centralized platform for all users' needs could reduce frustration and “FOMO” with online beauty shopping"
+          heading="Centralized platform for all users' needs could reduce frustration and “FOMO“ with online beauty shopping"
           className="fade-in"
           stacked
         >
-          <ol className="fade-in mt-16 grid grid-cols-3 items-end gap-0 max-w-200 mx-auto">
+          <ol className="fade-in mt-8 md:mt-16 grid grid-cols-3 items-end gap-0 max-w-full md:max-w-200 mx-auto">
             {FINDING_SUMMARIES.map((summary, i) => {
               const colors = [
                 "var(--color-swatch-pink)",
                 "var(--color-swatch-peach)",
                 "var(--color-swatch-mint)",
               ];
-              const offsets = ["mb-0", "mb-8", "mb-16"];
+              const offsets = ["mb-0", "mb-4 md:mb-8", "mb-8 md:mb-16"];
               return (
                 <li
                   key={summary}
-                  className={`w-58.75 aspect-square rounded-sm border-2 border-black p-5 flex flex-col justify-between ${offsets[i]}`}
+                  className={`w-full aspect-square rounded-sm border-2 border-black p-3 md:p-5 flex flex-col justify-between ${offsets[i]}`}
                   style={{ backgroundColor: colors[i] }}
                 >
-                  <p className="font-body text-[16px] leading-[1.3]">
+                  <p className="font-body text-[12px] md:text-[16px] leading-[1.3]">
                     {summary}
                   </p>
-                  <span className="font-display text-[48px]">{i + 1}</span>
+                  <span className="font-display text-[32px] md:text-[48px]">
+                    {i + 1}
+                  </span>
                 </li>
               );
             })}
@@ -381,11 +385,11 @@ export default function WorkPage() {
         {/* Ideation */}
         <Section
           eyebrow="Ideation"
-          heading="Prioritizing intuitive browsing and synergy over “combining”"
+          heading="Prioritizing intuitive browsing and synergy over “combining“"
           className="fade-in"
           imageRight={
-            <div className="space-y-4 pt-34">
-              <p className="fade-in font-body text-[18px] leading-[1.3]">
+            <div className="space-y-4 md:pt-34">
+              <p className="font-body text-[16px] md:text-[18px] leading-[1.3]">
                 Originally being a project for a university class, I knew I
                 wanted to make something that would attempt to solve a problem
                 at least one individual would have, and who do I know better
@@ -398,7 +402,7 @@ export default function WorkPage() {
                 super-idea — leading me to the goal of designing a web platform
                 that combined both Sephora and IsThereAnyDeal? together.
               </p>
-              <p className="fade-in font-body text-[18px] leading-[1.3]">
+              <p className="font-body text-[16px] md:text-[18px] leading-[1.3]">
                 When revisiting this idea post-grad, I went further than
                 combining Sephora and IsThereAnyDeal? at their "base levels,"
                 and looked into the best features of popular gaming and beauty
@@ -427,29 +431,29 @@ export default function WorkPage() {
           <p>WOOF! This was the first iteration for my college class...</p>
         </Section>
 
-        {/* Low-Mid Fidelity Wireframess */}
+        {/* Low-Mid Fidelity Wireframes */}
         <Section
           eyebrow="Low-Mid Fidelity Wireframes"
-          heading="Re-imagining the savvy shopper’s experience"
+          heading="Re-imagining the savvy shopper's experience"
           className="fade-in"
           stacked
         >
           <p>
             I focused most on learnability and satisfaction as metrics when
             envisioning my design. Since it is targeted towards makeup and
-            skincare fanatics, I heavily intertwined Sephora’s  and Ulta’s
+            skincare fanatics, I heavily intertwined Sephora's and Ulta's
             respective designs with my own as it would allow users to pick up on
             using my design faster and be less intimidating when given lots of
             different prices and other comparison tools. For satisfaction, I
             wanted users to be comfortable with the amount of information
             provided and for the product to be designed in a way that the user
             could easily digest and see very quickly if it was a good deal or
-            not. 
+            not.
           </p>
           <img
             src={wireframesLow}
-            alt="Research findings"
-            className="fade-in w-full object-cover mt-12"
+            alt="Wireframes"
+            className="fade-in w-full object-cover mt-8 md:mt-12"
           />
         </Section>
 
@@ -475,7 +479,7 @@ export default function WorkPage() {
           </p>
         </Section>
 
-        <div className="fade-in mx-28 mb-6">
+        <div className="fade-in mx-4 md:mx-28 mb-6">
           <img src={styleGuide} alt="" className="w-full object-cover" />
         </div>
 
@@ -505,22 +509,22 @@ export default function WorkPage() {
             with the functionality of discount sites, I believe I created a
             meaningful improvement and a unique design within the category.
           </p>
-          <div className="fade-in grid grid-cols-2 gap-3 mt-12">
+          <div className="fade-in grid grid-cols-1 md:grid-cols-2 gap-3 mt-8 md:mt-12">
             <img
               src={updatedHomeFull}
-              alt="Research findings"
+              alt="Updated home"
               className="w-full object-cover border border-black"
             />
             <img
               src={updatedProductFull}
-              alt="Research findings"
+              alt="Updated product"
               className="w-full object-cover border border-black"
             />
           </div>
           <img
             src={updatedArrivalsFull}
-            alt="Research findings"
-            className="fade-in w-1/2 object-cover border border-black"
+            alt="Updated arrivals"
+            className="fade-in w-full md:w-1/2 object-cover border border-black"
           />
         </Section>
 
@@ -560,23 +564,23 @@ export default function WorkPage() {
             detail page.
           </p>
 
-          <div className="mt-10 grid grid-cols-2 gap-8">
+          <div className="mt-6 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {REVISIONS.map((revision, i) => (
               <div
                 key={revision.number}
-                className="fade-in flex flex-col mb-10"
+                className="fade-in flex flex-col mb-6 md:mb-10"
               >
                 <img
                   src={
                     [revision1, revision2, revision3, revision4, revision5][i]
                   }
                   alt={revision.title}
-                  className="fade-in w-full h-125 object-contain border border-black bg-[#B3B3B3]"
+                  className="w-full h-75 md:h-125 object-contain border border-black bg-[#B3B3B3]"
                 />
-                <h3 className="fade-in mt-4 font-body text-[18px] font-bold">
+                <h3 className="mt-4 font-body text-[16px] md:text-[18px] font-bold">
                   {revision.number}.&nbsp; {revision.title}
                 </h3>
-                <ul className="fade-in mt-3 list-disc space-y-2 pl-6 font-body text-[16px]">
+                <ul className="mt-3 list-disc space-y-2 pl-6 font-body text-[14px] md:text-[16px]">
                   {revision.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
@@ -590,7 +594,7 @@ export default function WorkPage() {
         <Section
           eyebrow="Conclusion"
           heading="Expanding Lustria"
-          className="fade-in -mt-18"
+          className="fade-in -mt-10 md:-mt-18"
           stacked
         >
           <p>
@@ -631,7 +635,7 @@ export default function WorkPage() {
       <a
         href="#top"
         aria-label="Back to top"
-        className="fixed bottom-20 right-20 hidden h-11.25 w-11.25 items-center justify-center rounded-full border border-black bg-white shadow-md lg:flex"
+        className="fixed bottom-10 md:bottom-20 right-6 md:right-20 flex h-11.25 w-11.25 items-center justify-center rounded-full border border-black bg-white shadow-md"
       >
         <img
           src={scrollTopIcon}

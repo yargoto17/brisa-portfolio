@@ -36,19 +36,19 @@ export default function ContactPage() {
 
   return (
     <PageLayout>
-      <section className="fade-in px-8 py-20 md:px-28 md:py-18">
+      <section className="fade-in px-4 py-12 md:px-28 md:py-18">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           <img
             src={webIcon}
             alt=""
-            className="mx-auto h-auto w-full max-w-112.5 -rotate-2"
+            className="mx-auto h-auto w-full max-w-70 md:max-w-112.5 -rotate-2"
           />
 
           <div>
-            <h1 className="font-display text-[64px] leading-none text-black lg:text-[96px]">
+            <h1 className="font-display text-[48px] md:text-[64px] lg:text-[96px] leading-none text-black">
               Connect
             </h1>
-            <p className="mt-4 max-w-153.75 font-body text-[22px] leading-tight text-black lg:text-[32px]">
+            <p className="mt-4 max-w-153.75 font-body text-[18px] md:text-[22px] leading-tight text-black lg:text-[32px]">
               I'd love to hear from you. Whether you want to hear about my
               availability, have questions, or just want to chat, don't hesitate
               to reach out!
@@ -58,9 +58,9 @@ export default function ContactPage() {
 
         <form
           onSubmit={handleSubmit}
-          className="mt-4 max-w-300 space-y-8 mx-20"
+          className="mt-4 max-w-300 space-y-8 md:mx-20"
         >
-          <div className="-mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <FormField
               id="contact-name"
               label="Name:"
@@ -89,7 +89,7 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="flex h-17 w-44 items-center justify-center rounded-lg border border-black bg-blue font-display text-[32px] text-white"
+            className="flex h-17 w-full md:w-44 items-center justify-center rounded-lg border border-black bg-blue font-display text-[32px] text-white"
           >
             Submit
           </button>

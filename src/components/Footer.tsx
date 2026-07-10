@@ -9,15 +9,15 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/brisagoto";
  */
 export default function Footer() {
   return (
-    <footer className="flex h-26 w-full items-center justify-between border-t-2 border-black bg-cream-nav px-24">
-      <p className="font-body text-[20px] leading-[1.4] text-black">
+    <footer className="flex flex-col md:flex-row md:h-26 w-full md:items-center md:justify-between border-t-2 border-black bg-cream-nav px-6 py-4 md:px-24 md:py-0 gap-3 md:gap-0">
+      <p className="font-body text-[16px] md:text-[20px] leading-[1.4] text-black text-center md:text-left">
         © 2026 - Brisa Goto &nbsp;|&nbsp; Get In Touch{" "}
         <a href={`mailto:${EMAIL}`} className="underline">
           {EMAIL}
         </a>
       </p>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-center md:justify-start gap-4">
         <a
           href={`mailto:${EMAIL}`}
           aria-label="Email Brisa Goto"
