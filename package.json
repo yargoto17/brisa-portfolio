@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && cd dist && git init && git add -A && git commit -m 'Deploy' && git push -f https://github.com/yargoto17/brisa-portfolio.git main:gh-pages && cd .."
   },
   "dependencies": {
     "react": "^19.2.7",
