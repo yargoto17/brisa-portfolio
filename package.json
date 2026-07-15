@@ -1,15 +1,15 @@
 {
-  "name": "brisa-portfolio",
+  "name": "portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://<your-github-username>.github.io/brisa-portfolio/",
+  "homepage": "https://<your-github-username>.github.io/portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "deploy": "npm run build && cd dist && git init && git add -A && git commit -m 'Deploy' && git push -f https://github.com/yargoto17/brisa-portfolio.git main:gh-pages && cd .."
+    "deploy": "npm run build && cd dist && git init && git add -A && git commit -m 'Deploy' && git push -f https://github.com/BrisaAKG/portfolio.git main:gh-pages && cd .."
   },
   "dependencies": {
     "react": "^19.2.7",

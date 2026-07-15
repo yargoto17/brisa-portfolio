@@ -13,7 +13,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col bg-cream">
       <NavBar />
-      <div className="h-20" /> {/* spacer for hamburger */}
+      <div className="h-20 md:h-0" /> {/* hamburger spacer for mobile */}
       <main className="mx-auto w-full max-w-360 flex-1">{children}</main>
       <Footer />
     </div>
