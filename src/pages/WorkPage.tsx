@@ -185,7 +185,7 @@ function Section({
 export default function WorkPage() {
   return (
     <PageLayout>
-      <div className="relative px-4 md:px-8 py-12 md:py-40 pb-10">
+      <div className="relative px-4 md:px-28 py-12 md:py-40 pb-10">
         {/* Title */}
         <div className="fade-in grid grid-cols-1 items-center gap-8 md:gap-16 md:grid-cols-2">
           <img
